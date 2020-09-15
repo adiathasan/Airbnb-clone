@@ -1,0 +1,36 @@
+.banner {
+  width: 100%;
+  border-radius: 0 0 0.6rem 0.6rem;
+  position: relative;
+  max-height: 50vh;
+  background: url("https://a0.muscache.com/im/pictures/16df1348-322f-4482-8694-3ccbdbf078b1.jpg?im_q=highq&im_w=1200")
+    center center;
+}
+
+.banner__info {
+  width: 300px;
+  max-height: 80%;
+  padding: 10vh 50px 50px 40px;
+}
+
+.banner__info > h1 {
+  font-weight: 700;
+  font-size: x-large;
+  padding: 0.4rem 0;
+}
+
+.banner__info > .h > h3:hover {
+  transform: scale(1.1);
+}
+
+.banner__info > h4 {
+  font-weight: 400;
+  font-size: large;
+  padding: 0.3rem 0;
+}
+
+.banner__searchSpace {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
