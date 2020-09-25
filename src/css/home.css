@@ -5,14 +5,14 @@
   margin: 3rem 0;
 }
 
-.home__cardsRow > .card {
+.home__cardsRow .card {
   cursor: pointer;
   transition: 0.3s ease-in;
   border-radius: 0.6rem;
   box-shadow: 0px 2px 10px -5px rgba(0, 0, 0, 0.56);
 }
 
-.home__cardsRow > .card:hover {
+.home__cardsRow .card:hover {
   transform: scale(1.07);
 }
 

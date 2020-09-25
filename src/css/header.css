@@ -15,7 +15,7 @@
 .header__logo {
   object-fit: contain;
   height: 2rem;
-  margin: 10px auto;
+  margin: 10px;
 }
 
 .header__containerSearch {
@@ -38,8 +38,14 @@
   width: 100%;
 }
 
+.header__containerRight > p > button {
+  text-transform: inherit;
+  background-color: #fa38580a;
+}
+
 .header__searchLogo {
   color: #fa3858;
+  cursor: pointer;
 }
 
 .header__containerRight > p {
@@ -66,6 +72,16 @@
   margin: 0 0.3rem;
 }
 
+.header__containerRightAvatar {
+  transform: scale(0.8);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+.header__containerRightAvatar:hover {
+  transform: initial;
+}
+
 @media (max-width: 596px) {
   .header__containerSearch {
     order: 3;
@@ -75,6 +91,7 @@
   }
   .header__logo {
     order: 1;
+    margin: auto;
   }
   .header {
     padding: 0.7rem 1rem;

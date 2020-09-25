@@ -1,0 +1,54 @@
+.search__modal {
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgb(238, 225, 225);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  padding: 2rem;
+  background-color: white;
+  text-align: center;
+  width: 60%;
+  height: 40vh;
+  border-radius: 6px;
+}
+
+.modal > h4 {
+  font-size: large;
+  font-weight: 400;
+  color: #f50d47;
+  margin-bottom: 0.5rem;
+}
+
+.modal__form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal__form > input {
+  width: 80%;
+  border: none;
+  background-color: whitesmoke;
+  outline: none;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.modal__form > button {
+  background-color: #f52559;
+  text-transform: initial;
+  color: antiquewhite;
+  margin-top: 0.5rem;
+  width: 80%;
+}
+
+.modal__form > button:hover {
+  background-color: wheat;
+  color: #f52559;
+}

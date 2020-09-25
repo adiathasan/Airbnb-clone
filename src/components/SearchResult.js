@@ -1,6 +1,10 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
+import Modal from "./Modal";
 
 function SearchResult({
+  id,
   img,
   location,
   title,
@@ -9,8 +13,19 @@ function SearchResult({
   price,
   total,
 }) {
+  const { user } = useAuth();
+  const history = useHistory();
   return (
-    <div className="searchResult">
+    <div
+      className="searchResult"
+      onClick={() => {
+        if (user) {
+          history.push(`/booking/${id}/${title}`);
+        } else {
+          alert("please Login First!");
+        }
+      }}
+    >
       <img src={img} alt="" />
 
       <div className="searchResult__info">
@@ -44,5 +59,4 @@ function SearchResult({
     </div>
   );
 }
-
 export default SearchResult;

@@ -1,3 +1,4 @@
+import { Button } from "@material-ui/core";
 import React from "react";
 import { Link } from "react-router-dom";
 import "../css/banner.css";
@@ -22,7 +23,7 @@ function Banner() {
               textDecoration: "none",
             }}
           >
-            Explore nearby {">"}{" "}
+            <Button>Explore nearby {">"} </Button>
           </h3>
         </Link>
       </div>

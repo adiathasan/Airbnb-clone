@@ -23,6 +23,11 @@
   transform: scale(1.1);
 }
 
+.banner__info > .h > h3 > button {
+  background-color: #fa3858;
+  color: white;
+}
+
 .banner__info > h4 {
   font-weight: 400;
   font-size: large;
