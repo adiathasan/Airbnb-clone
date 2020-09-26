@@ -17,20 +17,23 @@ function Dashboard() {
       .delete();
   };
   useEffect(() => {
-    const unsub = firestore
+    firestore
       .collection("users")
       .doc(id)
       .collection("bookings")
       .onSnapshot((snap) => {
-        setBookings(snap?.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-        return () => unsub();
+        const fetchBookings = async () => {
+          const { docs } = await snap;
+          setBookings(docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        };
+        fetchBookings();
       });
   }, []);
   return (
     <div className="dashboard">
       <h3>Dashboard</h3>
       <div className="dashboard__left">
-        <img src={user?.image} alt="" />
+        <img src={user?.url} alt="" />
       </div>
       <div className="dashboard__right">
         <h4>

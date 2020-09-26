@@ -4,17 +4,22 @@ import firestore from "../config/firebase";
 function useRoom() {
   const [rooms, setRoom] = useState(null);
 
-  useEffect(() => {
-    firestore.collection("rooms").onSnapshot((snap) =>
+  const fetchRooms = async () => {
+    firestore.collection("rooms").onSnapshot(async (snap) => {
+      const { docs } = await snap;
       setRoom(
-        snap.docs?.map((room) => {
+        docs?.map((room) => {
           return {
             ...room.data(),
             id: room.id,
           };
         })
-      )
-    );
+      );
+    });
+  };
+
+  useEffect(() => {
+    fetchRooms();
   }, []);
   return {
     rooms,

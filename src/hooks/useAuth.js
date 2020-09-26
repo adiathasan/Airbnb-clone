@@ -3,23 +3,22 @@ import { auth, timeStamp } from "../config/firebase";
 
 function useAuth() {
   const [user, setUser] = useState(null);
-  useEffect(() => {
-    const unsub = auth.onAuthStateChanged((user) => {
-      setUser(
-        user
-          ? {
-              name: user.displayName,
-              url: user.photoURL,
-              timeStamp: timeStamp(),
-              id: user.uid,
-              email: user.email,
-              image: user.photoURL,
-              phone: user.phoneNumber,
-            }
-          : null
-      );
+
+  const fetchUser = async () => {
+    auth.onAuthStateChanged(async (user) => {
+      const { displayName, photoURL, uid, email, phoneNumber } = await user;
+      setUser({
+        name: displayName,
+        url: photoURL,
+        timeStamp: timeStamp(),
+        id: uid,
+        email: email,
+        phone: phoneNumber,
+      });
     });
-    return () => unsub();
+  };
+  useEffect(() => {
+    fetchUser();
   }, []);
   return {
     user,

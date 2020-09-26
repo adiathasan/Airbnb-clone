@@ -36,6 +36,7 @@ function Modal() {
         <h4>{title}</h4>
         <form className="modal__form" onSubmit={handleBooking}>
           <input
+            required
             type="number"
             min="0"
             minLength="11"
@@ -45,6 +46,7 @@ function Modal() {
             onChange={(e) => setPhone(e.target.value)}
           />
           <input
+            required
             type="text"
             placeholder="booking name by"
             value={name}

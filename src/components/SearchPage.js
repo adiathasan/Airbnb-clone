@@ -18,13 +18,13 @@ function SearchPage() {
           <SearchResult
             key={room.id}
             id={room.id}
-            img={room?.img}
-            location={room?.location}
-            title={room?.title}
-            description={room?.description}
-            star={room?.star}
-            price={room?.price}
-            total={room?.total}
+            img={room.img}
+            location={room.location}
+            title={room.title}
+            description={room.description}
+            star={room.star}
+            price={room.price}
+            total={room.total}
           />
         ))}
       </div>

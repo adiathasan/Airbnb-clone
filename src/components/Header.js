@@ -66,8 +66,8 @@ function Header() {
           <i className="fas fa-chevron-down"></i>
         </div>
         {user ? (
-          <Link to={"/dashboard/" + user?.id}>
-            <Avatar className="header__containerRightAvatar" src={user?.url} />
+          <Link to={"/dashboard/" + user.id}>
+            <Avatar className="header__containerRightAvatar" src={user.url} />
           </Link>
         ) : (
           <Avatar className="header__containerRightAvatar" />
